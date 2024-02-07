@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "django-quickstart"
+version = "0.1.0"
+description = ""
+authors = ["Pedro Lopez <pedrolopz.85@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.14.0"
+celery = "^5.3.6"
+psycopg2 = "==2.9.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

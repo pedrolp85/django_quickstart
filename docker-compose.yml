@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: django_quickstart_db
+      POSTGRES_USER: userdev
+      POSTGRES_PASSWORD: passdev
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:alpine
+
+  backend:
+    build: .
+    command: python django_quickstart/manage.py runserver
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=django_quickstart.settings.dev
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  postgres_data:
