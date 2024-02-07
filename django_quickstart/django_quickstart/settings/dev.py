@@ -7,7 +7,7 @@ DATABASES = {
         'NAME': 'django_quickstart_db',
         'USER': 'userdev',
         'PASSWORD':'passdev',
-        'HOST': 'localhost',
+        'HOST': 'django_quickstart_db',
         'PORT': '5432',
     }
 }

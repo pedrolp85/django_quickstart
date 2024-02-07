@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  db:
+  django_quickstart_db:
     image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -25,7 +25,7 @@ services:
     environment:
       - DJANGO_SETTINGS_MODULE=django_quickstart.settings.dev
     depends_on:
-      - db
+      - django_quickstart_db
       - redis
 
 volumes:
