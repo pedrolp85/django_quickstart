@@ -17,7 +17,7 @@ services:
 
   backend:
     build: .
-    command: python django_quickstart/manage.py runserver
+    command: python django_quickstart/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
