@@ -12,12 +12,12 @@ services:
     ports:
       - "5432:5432"
 
-  redis:
+  redis_django_db:
     image: redis:alpine
 
   backend:
     build: .
-    command: python django_quickstart/manage.py runserver
+    command: python django_quickstart/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
@@ -26,7 +26,7 @@ services:
       - DJANGO_SETTINGS_MODULE=django_quickstart.settings.dev
     depends_on:
       - django_quickstart_db
-      - redis
+      - redis_django_db
 
 volumes:
   postgres_data:

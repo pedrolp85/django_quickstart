@@ -26,6 +26,7 @@ RUN poetry install --no-interaction --no-ansi
 # Copia el resto del código fuente del proyecto al contenedor
 COPY . /app/
 
+
 # CMD ejecuta manage.py runserver por defecto
 # se sobreescribe en el compose
 #CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
