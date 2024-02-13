@@ -16,9 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from django_quickstart_app.views import ItemListView
 
 urlpatterns = [
-    path('item/<int:pk>/', ItemListView.as_view(), name="item_list"),
+    path("item/<int:pk>/", ItemListView.as_view(), name="item_list"),
 ]
